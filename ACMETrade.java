@@ -17,7 +17,7 @@ public class ACMETrade {
     
     public ACMETrade() {
         redirecionaIn();   
-        //redirecionaOut(); 
+        redirecionaOut(); 
         fed = new Federacao(); 
         con = new Convencao(fed);   
     }
