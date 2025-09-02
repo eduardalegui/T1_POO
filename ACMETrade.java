@@ -49,30 +49,14 @@ public class ACMETrade {
             con.cadastrarAcordos(cod, produto, taxa, comprador, vendedor);
         }
 
-            tres();
-            quatro();
-            cinco();
-            seis();
-            sete();
-
-            con.listarTodosOsAcordos();
-            con.listaTodosOsPaisesVendedores();
-
-    
-        //fed.cadastrarPaises(in);
-
-        //String sigla = in.nextLine();
-        //String nome = in.nextLine();
-        //fed.cadastrarPaises(sigla, nome);
-
-        //con.cadastrarAcordos(in);
-        //fed.consultarUmPaisPelaSigla(in);
-        //con.consultarAcordoPeloCodigo(in);
-        //con.consultarAcordoPelaSiglaDoComprador(in);
-        //fed.mudarNomeDeUmDeterminadoPais(in);
-        //con.removerAcordosDeUmDeterminadoPaisComprador(in);
-        //con.listarTodosOsAcordos();
-        //con.listaTodosOsPaisesVendedores();
+        tres();
+        quatro();
+        in.nextLine();
+        cinco();
+        seis();
+        sete();
+        con.listarTodosOsAcordos();
+        con.listaTodosOsPaisesVendedores();
     }
 
     private void redirecionaIn() {
@@ -104,7 +88,60 @@ public class ACMETrade {
         System.setOut(outPadrao);
     }
 
-/*
+
+    private void tres(){
+        String sigla = in.nextLine();
+        fed.consultarUmPaisPelaSigla(sigla);
+    }
+
+    private void quatro(){
+        int codigo = in.nextInt();
+        con.consultarAcordoPeloCodigo(codigo);
+        
+    }
+
+    private void cinco(){
+        String comp = in.nextLine();
+        con.consultarAcordoPelaSiglaDoComprador(comp);
+    }
+
+    private void seis(){
+        
+        String sigla = in.nextLine();
+        String nome = in.nextLine();
+        Pais w = fed.mudarNomeDeUmDeterminadoPais(sigla, nome);
+        if(w == null){
+            System.out.println("6:erro-sigla inexistente.");
+        }else{
+            System.out.println("6:" + w.getSigla() + ";" + w.getNome()); 
+        }
+    }
+
+    private void sete(){
+        String r = in.nextLine();
+        con.removerAcordosDeUmDeterminadoPaisComprador(r);
+    }
+
+
+}
+
+        //fed.cadastrarPaises(in);
+
+        //String sigla = in.nextLine();
+        //String nome = in.nextLine();
+        //fed.cadastrarPaises(sigla, nome);
+
+        //con.cadastrarAcordos(in);
+        //fed.consultarUmPaisPelaSigla(in);
+        //con.consultarAcordoPeloCodigo(in);
+        //con.consultarAcordoPelaSiglaDoComprador(in);
+        //fed.mudarNomeDeUmDeterminadoPais(in);
+        //con.removerAcordosDeUmDeterminadoPaisComprador(in);
+        //con.listarTodosOsAcordos();
+        //con.listaTodosOsPaisesVendedores();
+
+
+        /*
     private void um(){
 
         System.out.println("===================");
@@ -140,33 +177,3 @@ public class ACMETrade {
     }
 
 */
-
-    private void tres(){
-        String sigla = in.nextLine();
-        fed.consultarUmPaisPelaSigla(sigla);
-    }
-
-    private void quatro(){
-        int codigo = in.nextInt();
-        con.consultarAcordoPeloCodigo(codigo);
-    }
-
-    private void cinco(){
-        String comp = in.nextLine();
-        con.consultarAcordoPelaSiglaDoComprador(comp);
-    }
-
-    private void seis(){
-        String sigla = in.nextLine();
-        String nome = in.nextLine();
-       fed.mudarNomeDeUmDeterminadoPais(sigla, nome);
-    }
-
-    private void sete(){
-        String r = in.nextLine();
-        con.removerAcordosDeUmDeterminadoPaisComprador(r);
-    }
-
-
-}
-

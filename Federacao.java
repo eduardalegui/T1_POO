@@ -75,25 +75,18 @@
     
         }
 
-        public void mudarNomeDeUmDeterminadoPais(String sigla, String nome){ //seis
+        public Pais mudarNomeDeUmDeterminadoPais(String sigla, String nome){ //seis
             Pais c = null;
-            boolean have = false;   
-
-            while(have == false){
-
-        
+   
                 for(int k = 0; k<paises.size(); k++){
                     if(paises.get(k).getSigla().equals(sigla)){
                         c = paises.get(k);
-                        have = true;
                         c.setNome(nome);     
-                        System.out.println("6:" + paises.get(k).getSigla() + ";" + paises.get(k).getNome());          
-                    }else{
-                        System.out.println("6:erro-sigla inexistente.");
-                        have = false;
+                        return c;         
                     }
                 }
+                return c;
                 //trabalhinho legal do yama!
-            }
+            
         }
     }

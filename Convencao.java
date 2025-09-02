@@ -52,11 +52,9 @@ public class Convencao {
     }
 
     public void consultarAcordoPelaSiglaDoComprador(String comp){ //cinco
-
-
         boolean encontrado = false;
         for(int k = 0; k < acordos.size(); k++){
-            if(acordos.get(k).getComprador().getSigla().equals(comp)){
+            if((acordos.get(k).getComprador().getSigla()).equals(comp)){
                 Acordo a = acordos.get(k);
                 System.out.println("5:" + a.getCodigo() + ";" + a.getProduto() + ";" + a.getTaxa() + ";" + a.getComprador().getSigla() + ";" + a.getVendedor().getSigla());  
                 encontrado = true;
@@ -86,7 +84,6 @@ public class Convencao {
 
     public void listarTodosOsAcordos(){ //ok
         Acordo j = null;
-        System.out.println("===================");
         if(acordos.size() > 0){
             for(int k = 0; k<acordos.size();k ++){
                 j = acordos.get(k);
@@ -98,18 +95,77 @@ public class Convencao {
     }
 
     public void listaTodosOsPaisesVendedores(){
-        Pais q = null;
-        System.out.println("===================");
+        String w;
+        String x = "";
         if(acordos.size() > 0){
             for(int k = 0; k<acordos.size();k ++){
-                q = acordos.get(k).getVendedor();
-                System.out.println("9:"+ q.getSigla() + ";" + q.getNome());   
+                w = acordos.get(k).getVendedor().getSigla();
+                if(x != w){
+                    for(int u = 0; u<fed.getPais().size();u ++){
+                        x = w;
+                        if(w != fed.getPais().get(u).getSigla()){
+                            System.out.println("9:"+ fed.getPais().get(u).getSigla() + ";" + fed.getPais().get(u).getNome()); 
+                        }  
+                    }
+                }
             } 
         }else{
             System.out.println("9:erro-nenhum pais encontrado.");
         }
     }
+
+
+        // if(fed.getPais().size() > 0){
+        //     for(int k = 0; k<fed.getPais().size();k ++){
+        //         w = fed.getPais().get(k).getSigla();
+        //         for(int u = 0; k<acordos.size();u ++){
+        //             if(w != acordos.get(u).getVendedor().getSigla()){
+        //                 System.out.println("9:"+ fed.getPais().get(k).getSigla() + ";" + fed.getPais().get(k).getNome()); 
+        //             }  
+        //         }
+        //     } 
+        // }else{
+        //     System.out.println("9:erro-nenhum pais encontrado.");
+        // }
+
+
     
+    //     if(acordos.size() > 0){
+    //     for(int k = 0; k<acordos.size();k ++){
+    //         q = acordos.get(k).getVendedor();
+    //         e = acordos.get(k).getComprador();
+    //         s = q.getSigla();
+    //         n = e.getSigla(); 
+    //         if(n != acordos.get(k).getVendedor().getSigla()){
+    //             System.out.println("9:"+ e.getSigla() + ";" + e.getNome()); 
+    //         }  
+    //     } 
+    // }if (fed.getPais().size() > 0){
+    //     for(int k = 0; k<fed.getPais().size();k ++){
+    //         w = fed.getPais().get(k).getSigla();
+    //         for(int u = 0; k<acordos.size();u ++){
+    //             if(w != acordos.get(u).getVendedor().getSigla()){
+    //                 System.out.println("9:"+ fed.getPais().get(k).getSigla() + ";" + fed.getPais().get(k).getNome()); 
+    //             }  
+    //         }
+    //     } 
+    // }else{
+    //     System.out.println("9:erro-nenhum pais encontrado.");
+    // }
+
+
+
+    // public void listaTodosOsPaisesVendedores(){
+    //     Pais q = null;
+    //     if(acordos.size() > 0){
+    //         for(int k = 0; k<acordos.size();k ++){
+    //             q = acordos.get(k).getVendedor();
+    //             System.out.println("9:"+ q.getSigla() + ";" + q.getNome());   
+    //         } 
+    //     }else{
+    //         System.out.println("9:erro-nenhum pais encontrado.");
+    //     }
+    // }
 
 }
 
