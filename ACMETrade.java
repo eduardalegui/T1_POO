@@ -19,7 +19,7 @@ public class ACMETrade {
 
     public ACMETrade() {
         redirecionaIn();
-        redirecionaOut();
+        //redirecionaOut();
         fed = new Federacao();
         con = new Convencao(fed);
     }
@@ -59,6 +59,7 @@ public class ACMETrade {
         sete();
         con.listarTodosOsAcordos();
         con.listaTodosOsPaisesVendedores();
+        con.mostrarOPaisComAMaiorQuantidadeDeAcordosComoVendedor();
     }
 
     private void redirecionaIn() {
