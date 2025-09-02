@@ -64,7 +64,7 @@ public class Convencao {
                 Acordo a = acordos.get(k);
                 System.out.println("5:" + a.getCodigo() + ";" + a.getProduto() + ";" + a.getTaxa() + ";" + a.getComprador().getSigla() + ";" + a.getVendedor().getSigla());
                 encontrado = true;
-                break;
+                break;  //faz nao printar todos os acordos
             }
         }
         if (!encontrado) {
