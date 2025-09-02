@@ -135,33 +135,32 @@ public class Convencao {
         }
     }
 
-    public void mostrarOPaisComAMaiorQuantidadeDeAcordosComoVendedor(){
+    public void mostrarOPaisComAMaiorQuantidadeDeAcordosComoVendedor() {
         Pais q = null;
         Pais l = null;
         String r;
         String h;
         int count = 1;
         int quantidadeDeacordos = 1;
-        if(acordos.size() > 0){
-            for(int k = 0; k<acordos.size();k ++){
+        if (acordos.size() > 0) {
+            for (int k = 0; k < acordos.size(); k++) {
                 q = acordos.get(k).getVendedor();
                 r = q.getSigla();
-                for(int o = 1; o<acordos.size();o ++){
+                for (int o = 1; o < acordos.size(); o++) {
                     l = acordos.get(o).getVendedor();
                     h = l.getSigla();
-                    if(r.equals(h)){
+                    if (r.equals(h)) {
                         count++;
                     }
                 }
-                if(count > quantidadeDeacordos){
+                if (count > quantidadeDeacordos) {
                     quantidadeDeacordos = count;
                 }
                 count = 1;
-            } 
-            System.out.println("10:"+ q.getSigla() + ";" + q.getNome()+ ";" + quantidadeDeacordos); 
-        }else{
+            }
+            System.out.println("10:" + q.getSigla() + ";" + q.getNome() + ";" + quantidadeDeacordos);
+        } else {
             System.out.println("10:erro-nenhum pais encontrado.");
         }
     }
 }
-//                System.out.println("10:"+ q.getSigla() + ";" + q.getNome()+ ";" + quantidadeDeacordos);   
