@@ -136,31 +136,26 @@ public class Convencao {
     }
 
     public void mostrarOPaisComAMaiorQuantidadeDeAcordosComoVendedor() {
-        Pais q = null;
-        Pais l = null;
-        String r;
-        String h;
-        int count = 1;
-        int quantidadeDeacordos = 1;
+        int maior = 0;
+        String sigla = "";
+        String nome = "";
         if (acordos.size() > 0) {
-            for (int k = 0; k < acordos.size(); k++) {
-                q = acordos.get(k).getVendedor();
-                r = q.getSigla();
-                for (int o = 1; o < acordos.size(); o++) {
-                    l = acordos.get(o).getVendedor();
-                    h = l.getSigla();
-                    if (r.equals(h)) {
-                        count++;
+            for (int k = 0; k < fed.getPais().size(); k++) {
+                int cont = 0;
+                for (int u = 0; u < acordos.size(); u++) {
+                    if (fed.getPais().get(k).getSigla().equals(acordos.get(u).getVendedor().getSigla())) {
+                        cont++;
                     }
                 }
-                if (count > quantidadeDeacordos) {
-                    quantidadeDeacordos = count;
+                if (cont > maior) {
+                    maior = cont;
+                    sigla = fed.getPais().get(k).getSigla();
+                    nome = fed.getPais().get(k).getNome();
                 }
-                count = 1;
             }
-            System.out.println("10:" + q.getSigla() + ";" + q.getNome() + ";" + quantidadeDeacordos);
+            System.out.println("10:" + sigla + ";" + nome + ";" + maior);
         } else {
-            System.out.println("10:erro-nenhum pais encontrado.");
+            System.out.println("10:erro-nenhum pais cadastrado.");
         }
     }
 }
