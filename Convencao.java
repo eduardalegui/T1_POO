@@ -95,21 +95,34 @@ public class Convencao {
     }
 
     public void listaTodosOsPaisesVendedores(){
+       
         String w;
         String x = "";
+        String d;
+        boolean have = true;
+        
         if(acordos.size() > 0){
             for(int k = 0; k<acordos.size();k ++){
-                w = acordos.get(k).getVendedor().getSigla();
-                if(x != w){
-                    for(int u = 0; u<fed.getPais().size();u ++){
-                        x = w;
-                        if(w != fed.getPais().get(u).getSigla()){
-                            System.out.println("9:"+ fed.getPais().get(u).getSigla() + ";" + fed.getPais().get(u).getNome()); 
-                        }  
+                if(k != 0){
+                    w = acordos.get(k).getVendedor().getSigla();
+                    if(x != w){
+                        for(int u = 0; u<fed.getPais().size();u ++){
+                            x = w;
+                            if(w != fed.getPais().get(u).getSigla()){
+                                System.out.println("9:"+ fed.getPais().get(u).getSigla() + ";" + fed.getPais().get(u).getNome()); 
+                                have= false;
+                            }  
+                        }
                     }
                 }
             } 
-        }else{
+        }if(acordos.size() == 0){
+            for(int u = 0; u<fed.getPais().size();u ++){
+                d = fed.getPais().get(u).getSigla();
+                System.out.println("9:"+ fed.getPais().get(u).getSigla() + ";" + fed.getPais().get(u).getNome());   
+                have = false;
+            }
+        }if(have){
             System.out.println("9:erro-nenhum pais encontrado.");
         }
     }
