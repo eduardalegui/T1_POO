@@ -155,7 +155,7 @@ public class Convencao {
             }
             System.out.println("10:" + sigla + ";" + nome + ";" + maior);
         } else {
-            System.out.println("10:erro-nenhum pais cadastrado.");
+            System.out.println("10:erro-nenhum pais encontrado.");
         }
     }
 }
