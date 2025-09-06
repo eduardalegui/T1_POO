@@ -58,7 +58,8 @@ public class ACMETrade {
         seis();
         sete();
         con.listarTodosOsAcordos();
-        con.listaTodosOsPaisesVendedores();
+        //con.listaTodosOsPaisesNaoVendedores();
+        con.nao();
         con.mostrarOPaisComAMaiorQuantidadeDeAcordosComoVendedor();
     }
 

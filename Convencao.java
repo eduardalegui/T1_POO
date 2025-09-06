@@ -1,6 +1,5 @@
 
 import java.util.ArrayList;
-import java.util.Random;
 
 public class Convencao {
 
@@ -100,7 +99,79 @@ public class Convencao {
         }
     }
 
-    public void listaTodosOsPaisesVendedores() {
+
+    /*public void listarNaoVendedores(){
+        ArrayList<Pais> paises = new ArrayList<Pais>();
+        for(int i = 0; i < fed.getPais().size(); i++) {
+            paises.add(fed.getPais().get(i));
+        }
+        for(int i = 0; i < paises.size(); i++) {
+            for(int j = 0; j < acordos.size(); j++) {
+                if(paises.get(i).getSigla().equals(acordos.get(j).getVendedor().getSigla())) {
+                    paises.remove(i);        
+                }
+            }
+        }
+        if(paises.size() == 0) {
+            System.out.println("9:erro-nenhum país encontrado.");
+        } else {
+            for(int k = 0; k < paises.size(); k++) {
+                System.out.println("9:" + paises.get(k).getSigla() + ";" + paises.get(k).getNome());
+            }
+        }
+    }*/
+
+    public void nao(){
+        boolean hevan = true;
+        if (acordos.size() > 0) {
+                
+            for(int g = 0; g < fed.getPais().size();g++){
+                boolean have = false;
+                //acordos.get(g).getVendedor().getSigla();
+                String h = fed.getPais().get(g).getSigla();
+   
+                for(int x = 0; x < acordos.size(); x++){
+                       
+                    if (acordos.get(x).getVendedor().getSigla().equals(h)){
+                        have=true;
+                     
+                        // System.out.println("9:" + h + ";" + fed.getPais().get(g).getNome());
+                        
+                    }
+                    // else{
+                    //     System.out.println("9:" + h + ";" + fed.getPais().get(g).getNome());
+                    //     break;
+                    // }
+                }
+                if(!have){
+                    System.out.println("9:" + h + ";" + fed.getPais().get(g).getNome());
+                    hevan = false;
+                }   
+            }
+        }if(acordos.size() == 0){
+            for(int r = 0; r < fed.getPais().size(); r++){
+                String t = fed.getPais().get(r).getSigla();
+                String p = fed.getPais().get(r).getNome();
+                System.out.println("9:" + t + ";" + p);
+            }
+        }if(hevan){
+            System.out.println("9:erro-nenhum país encontrado.");
+        }
+
+ 
+        // if (acordos.size() > 0) {
+        //     for(int g = 0; g < acordos.size();g++){
+        //     String h = acordos.get(g).getVendedor().getSigla();
+        //         for(int x = 0; x < fed.getPais().size(); x++){
+        //             if (fed.getPais().get(x).getSigla().equals(h)){
+                        
+        //             }
+        //         }
+        //     }
+        // }
+    }
+    
+    public void listaTodosOsPaisesNaoVendedores() {
 
         String w;
         String x = "";
