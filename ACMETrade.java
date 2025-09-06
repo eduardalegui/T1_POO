@@ -1,4 +1,3 @@
-// Imports
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -58,8 +57,7 @@ public class ACMETrade {
         seis();
         sete();
         con.listarTodosOsAcordos();
-        //con.listaTodosOsPaisesNaoVendedores();
-        con.nao();
+        con.listaTodosOsPaisesNaoVendedores();
         con.mostrarOPaisComAMaiorQuantidadeDeAcordosComoVendedor();
     }
 
