@@ -100,9 +100,9 @@ public class Convencao {
     }
 
     public void listaTodosOsPaisesNaoVendedores() {
-        boolean hevan = true;
+        
         if (acordos.size() > 0) {
-
+                    boolean hevan = true;
             for (int g = 0; g < fed.getPais().size(); g++) {
                 boolean have = false;
 
@@ -121,6 +121,9 @@ public class Convencao {
                     hevan = false;
                 }
             }
+            if (hevan) {
+            System.out.println("9:erro-nenhum país encontrado.");
+            }
         }
         if (acordos.size() == 0) {
             for (int r = 0; r < fed.getPais().size(); r++) {
@@ -129,9 +132,7 @@ public class Convencao {
                 System.out.println("9:" + t + ";" + p);
             }
         }
-        if (hevan) {
-            System.out.println("9:erro-nenhum país encontrado.");
-        }
+
     }
 
     public void mostrarOPaisComAMaiorQuantidadeDeAcordosComoVendedor() {

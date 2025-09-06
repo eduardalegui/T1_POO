@@ -49,7 +49,7 @@ public class ACMETrade {
             String vendedor = in.nextLine();
             con.cadastrarAcordos(cod, produto, taxa, comprador, vendedor);
         }
-
+        
         tres();
         quatro();
         in.nextLine();
