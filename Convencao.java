@@ -4,7 +4,7 @@ import java.util.ArrayList;
 public class Convencao {
 
     private ArrayList<Acordo> acordos;
-    public Federacao fed;
+    private Federacao fed;
 
     public Convencao(Federacao fed) {
         acordos = new ArrayList<Acordo>();
@@ -100,7 +100,7 @@ public class Convencao {
     }
 
     public void listaTodosOsPaisesNaoVendedores() {
-        
+
         if (acordos.size() > 0) {
                     boolean hevan = true;
             for (int g = 0; g < fed.getPais().size(); g++) {
